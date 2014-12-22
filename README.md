@@ -1,4 +1,4 @@
-AngularJS
+My Angular Projects
 =========
 
-test
+12.2014 - learning angularJS
