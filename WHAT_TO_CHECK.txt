@@ -1,0 +1,9 @@
+//jshint
+
+//grunt-bower-task  (copy bower imports to dest dir)
+//grunt-bower-install (modify html with bower imports)
+
+//uglify
+
+//grunt http server?
+//webstorm?
