@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name angularYoTemplate2App.controller:MainCtrl
@@ -7,18 +5,25 @@
  * # MainCtrl
  * Controller of the angularYoTemplate2App
  */
-angular.module('angularYoTemplate2App')
-  .controller('MainCtrl', function ($scope, TestTextResource) {
+
+projControllers.controller('MainCtrl',['$scope','PersonResource', MainCtrl]);
+
+function MainCtrl ($scope, PersonResource) {
     
-	$scope.data = {};  
+	$scope.personsList = [];
+
 	$scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
-    TestTextResource.get(function(response) {
-    	$scope.data.restMessage = response.Message;
-	});
+    PersonResource.query(function(response) {
+    	
+    	_.forEach(response, function(p){
+    		$scope.personsList.push(p.person);
+    	});
+
+    });
      
-  });
+  };

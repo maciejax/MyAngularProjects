@@ -1,9 +1,11 @@
 package com.myangular.firstapp.dto;
 
+import java.io.Serializable;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="Message")
-public class MessageDTO {
+public class MessageDTO implements Serializable {
 	
 	private String id;
 	private String message;

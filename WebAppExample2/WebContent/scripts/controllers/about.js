@@ -7,11 +7,12 @@
  * # AboutCtrl
  * Controller of the angularYoTemplate2App
  */
-angular.module('angularYoTemplate2App')
-  .controller('AboutCtrl', function ($scope) {
+projControllers.controller('AboutCtrl',['$scope']);
+
+function AboutCtrl ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  };

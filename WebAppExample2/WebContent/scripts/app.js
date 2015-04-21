@@ -1,4 +1,3 @@
-'use strict';
 
 /**
  * @ngdoc overview
@@ -8,13 +7,17 @@
  *
  * Main module of the application.
  */
-angular
-  .module('angularYoTemplate2App', [
+
+var angularYoTemplate2App = angular.module('angularYoTemplate2App', [
     'ngCookies',
     'restServices',
+    'projControllers',
     'ngRoute'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+
+var projControllers = angular.module('projControllers', []);
+
+angularYoTemplate2App.config([ '$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -27,4 +30,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+}]);

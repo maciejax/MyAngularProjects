@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: WebAppArchetype1
+Implementation-Version: 1.0-SNAPSHOT
+Implementation-Vendor-Id: md.websoft.webapp
+Implementation-Build: wtp
