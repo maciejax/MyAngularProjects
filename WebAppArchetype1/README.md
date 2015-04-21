@@ -1,17 +1,13 @@
-WebAppArchetype1
+***WebAppArchetype1***
 
-===================
-AngularJS
-Jersey-Spring REST api 
-Spring 3.0.5
-JPA Hibernate 3 api
-Eclipse Luna
-Apache Tomcat 8
+* *Techs*
+[AngularJS, Jersey-Spring REST api, Spring 3.0.5, JPA Hibernate 3 api]
+* *Environment*
+[Eclipse Luna, Apache Tomcat 8]
 
-===================
 
-Working:
-- mysqlDB
+**What is implemented**:
+- mysqlDB connection
 - persistence layer with JPA Hibernate
 - REST service providing list of objects
   trasnslated to JSON format
