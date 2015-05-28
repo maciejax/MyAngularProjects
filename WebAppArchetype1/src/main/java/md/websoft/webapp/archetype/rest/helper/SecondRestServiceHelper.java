@@ -8,6 +8,7 @@ import md.websoft.webapp.archetype.entities.Message;
 import md.websoft.webapp.archetype.service.SecondService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,7 +17,6 @@ public class SecondRestServiceHelper {
 	//services to inject
 	@Autowired
 	private SecondService secondService;
-	
 	
 	
 	public List<MessageDTO> getMessagesList(){

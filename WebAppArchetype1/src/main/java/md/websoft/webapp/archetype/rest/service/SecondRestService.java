@@ -2,12 +2,14 @@ package md.websoft.webapp.archetype.rest.service;
 
 import java.util.List;
 
+import javax.naming.AuthenticationException;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import md.websoft.webapp.archetype.dto.MessageDTO;
+import md.websoft.webapp.archetype.rest.helper.AuthenticationHelper;
 import md.websoft.webapp.archetype.rest.helper.SecondRestServiceHelper;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,10 @@ public class SecondRestService {
     
     @Autowired
     SecondRestServiceHelper secondRestServiceHelper;
+    
+    @Autowired
+    AuthenticationHelper authenticationHelper;
+    
     
     //RestTestingBean restTestingBean;
     
@@ -36,9 +42,14 @@ public class SecondRestService {
     @GET
     @Path("/web")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<MessageDTO> getTestMessage() {
-
-        return secondRestServiceHelper.getMessagesList();
+    public List<MessageDTO> getTestMessage() throws AuthenticationException {
+    	
+    	if(authenticationHelper.validateToken()){
+    		return secondRestServiceHelper.getMessagesList();
+    	} else {
+    		throw new AuthenticationException();
+    	}
+    	
     }
     
 }
