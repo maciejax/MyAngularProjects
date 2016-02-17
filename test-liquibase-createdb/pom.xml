@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.websoft</groupId>
+  <artifactId>test-liquibase-createdb</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>test-liquibase-createdb Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <spring-framework.version>4.1.0.RELEASE</spring-framework.version>
+    <activemq.version>5.11.1</activemq.version>
+    <liquibase.version>3.4.2</liquibase.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jms</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+
+    <!-- ActiveMQ Artifacts -->
+    <dependency>
+      <groupId>org.apache.activemq</groupId>
+      <artifactId>activemq-all</artifactId>
+      <version>${activemq.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+    </dependency>
+
+    <!-- liquibase -->
+    <dependency>
+      <groupId>org.liquibase</groupId>
+      <artifactId>liquibase-core</artifactId>
+      <version>${liquibase.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.38</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>test-liquibase-createdb</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <version>${liquibase.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>localdev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <datasource_connection_url>jdbc:mysql://127.0.0.1:3306/messages_test</datasource_connection_url>
+        <datasource_username>maciej</datasource_username>
+        <datasource_password>mljNns111</datasource_password>
+        <datasource_schema>messages_test</datasource_schema>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>liquibase-mysql</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-maven-plugin</artifactId>
+            <version>${liquibase.version}</version>
+            <configuration>
+              <url>${datasource_connection_url}</url>
+              <defaultSchemaName>${datasource_schema}</defaultSchemaName>
+              <driver>com.mysql.jdbc.Driver</driver>
+              <username>${datasource_username}</username>
+              <password>${datasource_password}</password>
+              <changeLogFile>${basedir}/src/main/resources/liquibase/master.xml</changeLogFile>
+              <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

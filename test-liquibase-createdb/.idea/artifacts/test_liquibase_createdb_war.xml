@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="test-liquibase-createdb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="test-liquibase-createdb.war">
+      <element id="artifact" artifact-name="test-liquibase-createdb:war exploded" />
+    </root>
+  </artifact>
+</component>
