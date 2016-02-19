@@ -16,6 +16,7 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
+      <charset value="windows-1250" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -23,6 +24,14 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes />
+  </component>
+  <component name="DBNavigator.Project.DatabaseConsoleManager">
+    <connection id="66bfeee6-045d-438d-8215-23e7dc42974b">
+      <console name="localhostMySql56" type="STANDARD" />
+    </connection>
+  </component>
+  <component name="DBNavigator.Project.EditorStateManager">
+    <last-used-providers />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -43,7 +52,82 @@
     <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
-    <connections />
+    <connections>
+      <connection id="66bfeee6-045d-438d-8215-23e7dc42974b" active="true">
+        <database>
+          <name value="localhostMySql56" />
+          <description value="mysql 5.6.24" />
+          <database-type value="MYSQL" />
+          <config-type value="BASIC" />
+          <database-version value="5.6" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="3306" />
+          <database value="messages_test" />
+          <os-authentication value="false" />
+          <empty-password value="false" />
+          <user value="maciej" />
+          <password value="bWFjaWVq" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <proxy-password value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <details>
+          <charset value="UTF-8" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <environment-type value="default" />
+          <idle-time-to-disconnect value="30" />
+          <password-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+          <connect-automatically value="true" />
+        </details>
+        <object-filters hide-empty-schemas="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+    </connections>
     <browser-settings>
       <general>
         <display-mode value="TABBED" />
@@ -59,20 +143,20 @@
           <object-type name="CHARSET" enabled="true" />
           <object-type name="TABLE" enabled="true" />
           <object-type name="VIEW" enabled="true" />
-          <object-type name="MATERIALIZED VIEW" enabled="true" />
-          <object-type name="NESTED TABLE" enabled="true" />
+          <object-type name="MATERIALIZED_VIEW" enabled="true" />
+          <object-type name="NESTED_TABLE" enabled="true" />
           <object-type name="COLUMN" enabled="true" />
           <object-type name="INDEX" enabled="true" />
           <object-type name="CONSTRAINT" enabled="true" />
-          <object-type name="TRIGGER" enabled="true" />
-          <object-type name="TRIGGER" enabled="true" />
+          <object-type name="DATASET_TRIGGER" enabled="true" />
+          <object-type name="DATABASE_TRIGGER" enabled="true" />
           <object-type name="SYNONYM" enabled="true" />
           <object-type name="SEQUENCE" enabled="true" />
           <object-type name="PROCEDURE" enabled="true" />
           <object-type name="FUNCTION" enabled="true" />
           <object-type name="PACKAGE" enabled="true" />
           <object-type name="TYPE" enabled="true" />
-          <object-type name="TYPE ATTRIBUTE" enabled="true" />
+          <object-type name="TYPE_ATTRIBUTE" enabled="true" />
           <object-type name="ARGUMENT" enabled="true" />
           <object-type name="DIMENSION" enabled="true" />
           <object-type name="CLUSTER" enabled="true" />
@@ -85,6 +169,11 @@
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
       </sorting>
+      <default-editors>
+        <object-type name="VIEW" editor-type="SELECTION" />
+        <object-type name="PACKAGE" editor-type="SELECTION" />
+        <object-type name="TYPE" editor-type="SELECTION" />
+      </default-editors>
     </browser-settings>
     <navigation-settings>
       <lookup-filters>
@@ -101,8 +190,8 @@
           <object-type name="COLUMN" enabled="false" />
           <object-type name="INDEX" enabled="true" />
           <object-type name="CONSTRAINT" enabled="true" />
-          <object-type name="TRIGGER" enabled="true" />
-          <object-type name="TRIGGER" enabled="true" />
+          <object-type name="DATASET TRIGGER" enabled="true" />
+          <object-type name="DATABASE TRIGGER" enabled="true" />
           <object-type name="SYNONYM" enabled="false" />
           <object-type name="SEQUENCE" enabled="true" />
           <object-type name="PROCEDURE" enabled="true" />
@@ -153,7 +242,6 @@
         <convert-empty-strings-to-null value="true" />
         <select-content-on-cell-edit value="true" />
         <large-value-preview-active value="true" />
-        <load-view-data-active value="false" />
       </general>
       <filters>
         <prompt-filter-dialog value="true" />
@@ -362,6 +450,7 @@
         <fetch-block-size value="100" />
         <execution-timeout value="20" />
         <debug-execution-timeout value="600" />
+        <focus-result value="false" />
         <prompt-execution value="false" />
       </statement-execution>
       <script-execution>
@@ -431,10 +520,10 @@
       </regional-settings>
       <environment>
         <environment-types>
-          <environment-type id="development" name="Development" description="Development environment" color="-2430209/-12296320" />
-          <environment-type id="integration" name="Integration" description="Integration environment" color="-2621494/-12163514" />
-          <environment-type id="production" name="Production" description="Productive environment" color="-11574/-10271420" />
-          <environment-type id="other" name="Other" description="" color="-1576/-10724543" />
+          <environment-type id="development" name="Development" description="Development environment" color="-2430209/-12296320" readonly-code="false" readonly-data="false" />
+          <environment-type id="integration" name="Integration" description="Integration environment" color="-2621494/-12163514" readonly-code="false" readonly-data="false" />
+          <environment-type id="production" name="Production" description="Productive environment" color="-11574/-10271420" readonly-code="false" readonly-data="false" />
+          <environment-type id="other" name="Other" description="" color="-1576/-10724543" readonly-code="false" readonly-data="false" />
         </environment-types>
         <visibility-settings>
           <connection-tabs value="true" />
