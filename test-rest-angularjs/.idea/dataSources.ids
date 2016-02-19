@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - messages_test@localhost" uuid="dc92a226-3360-4997-ad6c-497e2f4358fe">
+    <database-info product="MySQL" version="5.6.24-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="messages_test"/>
+    <table name="adm_message" schema="" catalog="messages_test" type="TABLE">
+      <column name="adm_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="adm_message" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="adm_id"/>
+    </table>
+  </data-source>
+</component>
