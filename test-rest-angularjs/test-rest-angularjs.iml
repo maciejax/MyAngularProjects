@@ -12,7 +12,7 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration process_explicitly_annotated="true">
+      <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/componentContext.xml</file>
         </fileset>
